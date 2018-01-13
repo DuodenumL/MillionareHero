@@ -101,6 +101,7 @@ class MillionareHero:
 async def get_handler(request):
     start_time = time.time()
     data = await request.json()
+    # 如果具备条件，可以将engine换为Google
     m = MillionareHero(data['question'], data['options'], engine=BAIDU)
     score = await m.get_score()
     response = "%s" % json.dumps(sorted(score.items(), key=lambda x: x[1], reverse=True))

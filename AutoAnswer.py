@@ -25,7 +25,7 @@ class AutoAnswer:
     @classmethod
     def adb_get_image(cls, filepath):
         os.system('adb shell /system/bin/screencap -p /sdcard/screenshot.png')
-        os.system('adb pull /sdcard/screenshot.png /your/path/' + filepath)
+        os.system('adb pull /sdcard/screenshot.png ./' + filepath)
 
     @classmethod
     def detect_question(cls, filepath):
